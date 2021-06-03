@@ -6,19 +6,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
 
-
-
 public class VendingMachine {
-
 
     // Create balance = Big Decimal
     BigDecimal balance = new BigDecimal(0.00).setScale(2);
+
     //TODO Create a List = Purchase List
     //TODO Create inventory = Map
     //TODO Declare a Log Writer(Worry about lastly)
-
-    //Method to display inventory
-    //Method to feed money
 
     public void feedMoney(int addMoney) {
         String typeOfTransaction = "FEED MONEY:";
@@ -39,5 +34,8 @@ public class VendingMachine {
         }
         System.out.println("Your balance is " + balance + ".");
     }
+
+    //Method to display inventory
+    //Method to feed money
 
 }
