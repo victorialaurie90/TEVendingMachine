@@ -3,17 +3,19 @@ package com.techelevator;
 import java.math.BigDecimal;
 import java.util.*;
 
+
 public class VendingMachine {
 
     BigDecimal balance = new BigDecimal(0.00).setScale(2);
     List <Product> purchaseList = new ArrayList<>();
     SortedMap<String, List<Product>> inventory = new TreeMap<>();
+    LogWriter writer = new LogWriter();
+
 
     public VendingMachine(SortedMap<String, List<Product>> inventory) {
         this.inventory = inventory;
     }
 
-    //TODO: Declare a Log Writer(Worry about lastly)
 
     // Method to display inventory
     public void displayInventory() {
@@ -46,12 +48,12 @@ public class VendingMachine {
                     System.out.println(inventory.get(guestSelection).get(0));
                     System.out.println(purchasedProduct.getSound());
 
-                    /*TODO: purchaseList.add(purchasedProduct);
+                     purchaseList.add(purchasedProduct);
                     Product cost = inventory.get(guestSelection).get(1);
                     BigDecimal cost1 = cost.price;
                     Product name1 = inventory.get(guestSelection).get(0);
                     String product1 = name1.name + " " + guestSelection;
-                    TODO: writer.writer(product1, cost1, balance);*/
+                     writer.writer(product1, cost1, balance);
                 }
                 else {
                     System.out.println("Insufficient funds");
@@ -62,37 +64,42 @@ public class VendingMachine {
     }
 
     public void completeTransaction() {
+        String typeOfTransaction = "GIVE CHANGE: ";
+
         Change thisChange = new Change();
         thisChange.giveChange(balance);
         balance = new BigDecimal(0).setScale(2);
-        //TODO: writer("GIVE CHANGE:", balance, new BigDecimal(0.00).setScale(2));
+        writer.writer(typeOfTransaction, balance, new BigDecimal(0.00).setScale(2));
         while (purchaseList.size() > 0) {
             Product purchases = purchaseList.remove(0);
-            //System.out.println(purchases.getSound());
+
         }
     }
 
 
     //Method to feed money
     public void feedMoney(int addMoney) {
-        String typeOfTransaction = "FEED MONEY:";
+        String typeOfTransaction = "FEED MONEY: ";
         if (addMoney == 1) {
             balance = balance.add(new BigDecimal((1.00)));
-            //TODO add code to write to LogWriter
+            writer.writer(typeOfTransaction, new BigDecimal(1.00).setScale(2), balance);
 
         } else if (addMoney == 2) {
             balance = balance.add(new BigDecimal((2.00)));
+            writer.writer(typeOfTransaction, new BigDecimal(2.00).setScale(2), balance);
 
         } else if (addMoney == 3) {
             balance = balance.add(new BigDecimal((5.00)));
+            writer.writer(typeOfTransaction, new BigDecimal(5.00).setScale(2), balance);
 
 
         }else if (addMoney == 4) {
             balance = balance.add(new BigDecimal((10.00)));//Method to complete transaction
+            writer.writer(typeOfTransaction, new BigDecimal(10.00).setScale(2), balance);
 
         }
         System.out.println("Your balance is " + balance + ".");
     }
 
-    //TODO: Method to finish transaction
+
 }
