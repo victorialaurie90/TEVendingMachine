@@ -1,18 +1,15 @@
 package com.techelevator;
 
 import java.math.BigDecimal;
-import java.util.Map;
-import java.util.HashMap;
-import java.util.List;
-import java.util.ArrayList;
+import java.util.*;
 
 public class VendingMachine {
 
     BigDecimal balance = new BigDecimal(0.00).setScale(2);
     List <Product> purchaseList = new ArrayList<>();
-    Map <String, List<Product>> inventory = new HashMap<>();
+    SortedMap<String, List<Product>> inventory = new TreeMap<>();
 
-    public VendingMachine(Map<String, List<Product>> inventory) {
+    public VendingMachine(SortedMap<String, List<Product>> inventory) {
         this.inventory = inventory;
     }
 
@@ -27,7 +24,7 @@ public class VendingMachine {
             if (value.size() == 1) {
                 System.out.println(key + "is out of stock.");
             } else {
-                System.out.println(key + " " + value.subList(0,1) + " " + (value.size() - 1));
+                System.out.println(key + " | " + value.get(0) + " | Quantity: " + (value.size() - 1));
             }
         }
     }
@@ -45,6 +42,10 @@ public class VendingMachine {
                 if (balance.compareTo(inventory.get(guestSelection).get(0).price) >= 0) {
                     balance = balance.subtract(inventory.get(guestSelection).get(0).price);
                     Product purchasedProduct = inventory.get(guestSelection).remove(0);
+
+                    System.out.println(inventory.get(guestSelection).get(0));
+                    System.out.println(purchasedProduct.getSound());
+
                     /*TODO: purchaseList.add(purchasedProduct);
                     Product cost = inventory.get(guestSelection).get(1);
                     BigDecimal cost1 = cost.price;
@@ -63,10 +64,11 @@ public class VendingMachine {
     public void completeTransaction() {
         Change thisChange = new Change();
         thisChange.giveChange(balance);
+        balance = new BigDecimal(0).setScale(2);
         //TODO: writer("GIVE CHANGE:", balance, new BigDecimal(0.00).setScale(2));
         while (purchaseList.size() > 0) {
             Product purchases = purchaseList.remove(0);
-            System.out.println(purchases.getSound());
+            //System.out.println(purchases.getSound());
         }
     }
 

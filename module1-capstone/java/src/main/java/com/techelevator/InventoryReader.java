@@ -8,10 +8,10 @@ import java.util.*;
 
 public class InventoryReader {
 
-    public Map<String, List<Product>> fileImporter() {
+    public SortedMap<String, List<Product>> fileImporter() {
         File inventoryFile = new File("C:/Users/Student/workspace/green-mod1-capstone-team0/module1-capstone/java/vendingmachine.csv");
 
-        Map<String, List<Product>> vendingMachineInventory = new HashMap<>();
+        SortedMap<String, List<Product>> vendingMachineInventory = new TreeMap<>();
 
         try (Scanner inventoryImporter = new Scanner(inventoryFile)) {
             while (inventoryImporter.hasNextLine()) {

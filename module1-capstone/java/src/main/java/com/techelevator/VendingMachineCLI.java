@@ -5,10 +5,6 @@ import java.util.Scanner;
 import com.techelevator.InventoryReader;
 import com.techelevator.VendingMachine;
 
-
-
-
-
 public class VendingMachineCLI {
 
 	private static final String MAIN_MENU_OPTION_DISPLAY_ITEMS = "Display Vending Machine Items";
@@ -68,8 +64,6 @@ public class VendingMachineCLI {
 			}
 		}
 	}
-
-
 
 	public static void main(String[] args) {
 		Menu menu = new Menu(System.in, System.out);
