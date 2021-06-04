@@ -18,7 +18,7 @@ public class VendingMachine {
 
     //TODO: Declare a Log Writer(Worry about lastly)
 
-    //TODO: Method to display inventory
+    // Method to display inventory
     public void displayInventory() {
         for (Map.Entry<String, List<Product>> entry: inventory.entrySet()) {
             String key = entry.getKey();
@@ -32,7 +32,7 @@ public class VendingMachine {
         }
     }
 
-    //TODO: Method to select product
+    // Method to select product
     public void purchase(String guestSelection) {
         if (!inventory.containsKey(guestSelection)) {
             System.out.println("This product does not exist. Please select a product in the vending machine.");
@@ -58,6 +58,16 @@ public class VendingMachine {
             }
         }
         System.out.println("Your balance is " + balance + ".");
+    }
+
+    public void completeTransaction() {
+        Change thisChange = new Change();
+        thisChange.giveChange(balance);
+        //TODO: writer("GIVE CHANGE:", balance, new BigDecimal(0.00).setScale(2));
+        while (purchaseList.size() > 0) {
+            Product purchases = purchaseList.remove(0);
+            System.out.println(purchases.getSound());
+        }
     }
 
 

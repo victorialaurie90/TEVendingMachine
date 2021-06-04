@@ -17,7 +17,7 @@ public class InventoryReader {
             while (inventoryImporter.hasNextLine()) {
                 String line = inventoryImporter.nextLine();
                 if (!line.isEmpty()) {
-                    String[] inventoryImportArray = line.split("[|]");
+                    String[] inventoryImportArray = line.split("\\|");
 
                     if (inventoryImportArray[0].contains("A")) {
                         List<Product> chipArray = new ArrayList<>();
