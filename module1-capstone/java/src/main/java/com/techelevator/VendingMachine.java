@@ -30,7 +30,7 @@ public class VendingMachine {
     }
 
     // Method to select product
-    public void purchase(String guestSelection) {
+    public void purchase(String guestSelection)  {
         if (!inventory.containsKey(guestSelection)) {
             System.out.println("This product does not exist. Please select a product in the vending machine.");
         }
