@@ -25,10 +25,15 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../victorialaird-java/module-1/14_Unit_Testing/exercise-student/java" />
     <property name="settings.editor.selected.configurable" value="preferences.updates" />
   </component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.techelevator" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.VendingMachineCLI">
     <configuration name="VendingMachineCLI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.techelevator.VendingMachineCLI" />
       <module name="m1-java-capstone-vending-machine" />
@@ -42,9 +47,76 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="InventoryReaderTests.testInventoryReader" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="m1-java-capstone-vending-machine" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.techelevator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.techelevator" />
+      <option name="MAIN_CLASS_NAME" value="com.techelevator.InventoryReaderTests" />
+      <option name="METHOD_NAME" value="testInventoryReader" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LogWriterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="m1-java-capstone-vending-machine" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.techelevator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.techelevator" />
+      <option name="MAIN_CLASS_NAME" value="com.techelevator.LogWriterTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VendingMachineTests.completeTranscationTest_shouldReturnCorrectChange" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="m1-java-capstone-vending-machine" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.techelevator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.techelevator" />
+      <option name="MAIN_CLASS_NAME" value="com.techelevator.VendingMachineTests" />
+      <option name="METHOD_NAME" value="completeTranscationTest_shouldReturnCorrectChange" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VendingMachineTests.purchaseTest_invalidInput_shouldReturnErrorMessage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="m1-java-capstone-vending-machine" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.techelevator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.techelevator" />
+      <option name="MAIN_CLASS_NAME" value="com.techelevator.VendingMachineTests" />
+      <option name="METHOD_NAME" value="purchaseTest_invalidInput_shouldReturnErrorMessage" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.VendingMachineCLI" />
+        <item itemvalue="JUnit.LogWriterTest" />
+        <item itemvalue="JUnit.InventoryReaderTests.testInventoryReader" />
+        <item itemvalue="JUnit.VendingMachineTests.completeTranscationTest_shouldReturnCorrectChange" />
+        <item itemvalue="JUnit.VendingMachineTests.purchaseTest_invalidInput_shouldReturnErrorMessage" />
       </list>
     </recent_temporary>
   </component>

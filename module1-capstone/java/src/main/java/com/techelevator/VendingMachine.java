@@ -16,7 +16,6 @@ public class VendingMachine {
         this.inventory = inventory;
     }
 
-
     // Method to display inventory
     public void displayInventory() {
         for (Map.Entry<String, List<Product>> entry: inventory.entrySet()) {
@@ -48,12 +47,12 @@ public class VendingMachine {
                     System.out.println(inventory.get(guestSelection).get(0));
                     System.out.println(purchasedProduct.getSound());
 
-                     purchaseList.add(purchasedProduct);
+                    purchaseList.add(purchasedProduct);
                     Product cost = inventory.get(guestSelection).get(1);
                     BigDecimal cost1 = cost.price;
                     Product name1 = inventory.get(guestSelection).get(0);
                     String product1 = name1.name + " " + guestSelection;
-                     writer.writer(product1, cost1, balance);
+                     writer.writer(product1 + " ", cost1, balance);
                 }
                 else {
                     System.out.println("Insufficient funds");

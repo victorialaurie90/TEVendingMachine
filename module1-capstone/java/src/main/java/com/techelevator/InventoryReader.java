@@ -24,7 +24,6 @@ public class InventoryReader {
                         for (int i = 0; i <= 5; i++) {
                             Chips temp = new Chips(inventoryImportArray[1], new BigDecimal(inventoryImportArray[2]));
                             chipArray.add(temp);
-
                         }
                         vendingMachineInventory.put(inventoryImportArray[0], chipArray);
 
