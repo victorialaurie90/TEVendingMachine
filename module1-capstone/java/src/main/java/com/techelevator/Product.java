@@ -2,7 +2,6 @@ package com.techelevator;
 
 import java.math.BigDecimal;
 
-
 public abstract class Product {
     public BigDecimal price;
     public String name;
@@ -11,8 +10,6 @@ public abstract class Product {
         this.name = name;
         this.price = price;
     }
-
-
 
 
     public abstract String getSound();

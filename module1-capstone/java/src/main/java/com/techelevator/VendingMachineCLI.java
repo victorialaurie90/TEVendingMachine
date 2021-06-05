@@ -9,17 +9,22 @@ public class VendingMachineCLI {
 
 	private static final String MAIN_MENU_OPTION_DISPLAY_ITEMS = "Display Vending Machine Items";
 	private static final String MAIN_MENU_OPTION_PURCHASE = "Purchase";
-	private static final String[] MAIN_MENU_OPTIONS = { MAIN_MENU_OPTION_DISPLAY_ITEMS, MAIN_MENU_OPTION_PURCHASE };
+	private static final String MAIN_MENU_OPTION_EXIT = "Exit";
+	private static final String[] MAIN_MENU_OPTIONS = {MAIN_MENU_OPTION_DISPLAY_ITEMS, MAIN_MENU_OPTION_PURCHASE, MAIN_MENU_OPTION_EXIT};
 	private static final String SUB_MENU_OPTIONS_FEED_MONEY = "Feed Money";
 	private static final String SUB_MENU_OPTIONS_PURCHASE = "Purchase";
 	private static final String SUB_MENU_OPTION_END = "Finish Transaction";
-	private static final String[] SUB_MENU_OPTIONS = { SUB_MENU_OPTIONS_FEED_MONEY, SUB_MENU_OPTIONS_PURCHASE, SUB_MENU_OPTION_END};
+	private static final String[] SUB_MENU_OPTIONS = {SUB_MENU_OPTIONS_FEED_MONEY, SUB_MENU_OPTIONS_PURCHASE, SUB_MENU_OPTION_END};
 	private static final String MONEY_MENU_OPTION_ONE = "Feed 1 dollar";
 	private static final String MONEY_MENU_OPTION_TWO = "Feed 2 dollars";
 	private static final String MONEY_MENU_OPTION_FIVE = "Feed 5 dollars";
 	private static final String MONEY_MENU_OPTION_TEN = "Feed 10 dollars";
-	private static final String[] MONEY_MENU_OPTIONS = { MONEY_MENU_OPTION_ONE, MONEY_MENU_OPTION_TWO, MONEY_MENU_OPTION_FIVE, MONEY_MENU_OPTION_TEN};
+	private static final String[] MONEY_MENU_OPTIONS = {MONEY_MENU_OPTION_ONE, MONEY_MENU_OPTION_TWO, MONEY_MENU_OPTION_FIVE, MONEY_MENU_OPTION_TEN};
 	private static VendingMachine vm = null;
+
+	//public void exit() {
+		//System.exit(0);
+	//}
 
 
 	private Menu menu;
@@ -61,14 +66,16 @@ public class VendingMachineCLI {
 						break;
 					}
 				}
+			} else if (choice.equals(MAIN_MENU_OPTION_EXIT)) {
+				System.exit(0);
 			}
 		}
 	}
 
-	public static void main(String[] args) {
-		Menu menu = new Menu(System.in, System.out);
-		VendingMachineCLI cli = new VendingMachineCLI(menu);
-		vm = new VendingMachine(new InventoryReader().fileImporter());
-		cli.run();
+		public static void main (String[]args){
+			Menu menu = new Menu(System.in, System.out);
+			VendingMachineCLI cli = new VendingMachineCLI(menu);
+			vm = new VendingMachine(new InventoryReader().fileImporter());
+			cli.run();
+		}
 	}
-}

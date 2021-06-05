@@ -11,7 +11,6 @@ public class VendingMachine {
     SortedMap<String, List<Product>> inventory = new TreeMap<>();
     LogWriter writer = new LogWriter();
 
-
     public VendingMachine(SortedMap<String, List<Product>> inventory) {
         this.inventory = inventory;
     }
@@ -74,7 +73,6 @@ public class VendingMachine {
 
         }
     }
-
 
     //Method to feed money
     public void feedMoney(int addMoney) {

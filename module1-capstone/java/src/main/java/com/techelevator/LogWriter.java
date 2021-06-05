@@ -12,13 +12,10 @@ import java.text.DateFormat;
 import java.util.Date;
 
 
-
-
 public class LogWriter {
     public void writer(String typeOfTransaction, BigDecimal amount, BigDecimal balance) {
         DateFormat dayAndTime = new SimpleDateFormat("MM/dd/yyyy hh:mm:ss aa");
 
-       
         try (PrintWriter logWriter = new PrintWriter(new FileOutputStream(new File("Log.txt"), true))) {
 
             String dayAndTimeString = dayAndTime.format(new Date()).toString();

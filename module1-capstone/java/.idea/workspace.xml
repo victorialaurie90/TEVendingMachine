@@ -25,7 +25,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../victorialaird-java/module-1/14_Unit_Testing/exercise-student/java" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.updates" />
   </component>
   <component name="RecentsManager">
@@ -47,7 +47,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="InventoryReaderTests.testInventoryReader" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CandyTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="m1-java-capstone-vending-machine" />
       <extension name="coverage">
         <pattern>
@@ -56,29 +56,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.techelevator" />
-      <option name="MAIN_CLASS_NAME" value="com.techelevator.InventoryReaderTests" />
-      <option name="METHOD_NAME" value="testInventoryReader" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LogWriterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="m1-java-capstone-vending-machine" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.techelevator.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.techelevator" />
-      <option name="MAIN_CLASS_NAME" value="com.techelevator.LogWriterTest" />
+      <option name="MAIN_CLASS_NAME" value="com.techelevator.CandyTests" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="VendingMachineTests.completeTranscationTest_shouldReturnCorrectChange" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ChipsTests.testChips_returnCorrectNameAndPrice" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="m1-java-capstone-vending-machine" />
       <extension name="coverage">
         <pattern>
@@ -87,14 +71,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.techelevator" />
-      <option name="MAIN_CLASS_NAME" value="com.techelevator.VendingMachineTests" />
-      <option name="METHOD_NAME" value="completeTranscationTest_shouldReturnCorrectChange" />
+      <option name="MAIN_CLASS_NAME" value="com.techelevator.ChipsTests" />
+      <option name="METHOD_NAME" value="testChips_returnCorrectNameAndPrice" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="VendingMachineTests.purchaseTest_invalidInput_shouldReturnErrorMessage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DrinkTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="m1-java-capstone-vending-machine" />
       <extension name="coverage">
         <pattern>
@@ -103,9 +87,23 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.techelevator" />
-      <option name="MAIN_CLASS_NAME" value="com.techelevator.VendingMachineTests" />
-      <option name="METHOD_NAME" value="purchaseTest_invalidInput_shouldReturnErrorMessage" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="com.techelevator.DrinkTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GumTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="m1-java-capstone-vending-machine" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.techelevator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.techelevator" />
+      <option name="MAIN_CLASS_NAME" value="com.techelevator.GumTests" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -113,10 +111,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.VendingMachineCLI" />
-        <item itemvalue="JUnit.LogWriterTest" />
-        <item itemvalue="JUnit.InventoryReaderTests.testInventoryReader" />
-        <item itemvalue="JUnit.VendingMachineTests.completeTranscationTest_shouldReturnCorrectChange" />
-        <item itemvalue="JUnit.VendingMachineTests.purchaseTest_invalidInput_shouldReturnErrorMessage" />
+        <item itemvalue="JUnit.GumTests" />
+        <item itemvalue="JUnit.DrinkTests" />
+        <item itemvalue="JUnit.ChipsTests.testChips_returnCorrectNameAndPrice" />
+        <item itemvalue="JUnit.CandyTests" />
       </list>
     </recent_temporary>
   </component>

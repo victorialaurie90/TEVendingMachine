@@ -5,7 +5,6 @@ import java.io.FileNotFoundException;
 import java.math.BigDecimal;
 import java.util.*;
 
-
 public class InventoryReader {
 
     public SortedMap<String, List<Product>> fileImporter() {
