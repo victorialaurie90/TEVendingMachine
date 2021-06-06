@@ -8,7 +8,7 @@ public class VendingMachine {
 
     BigDecimal balance = new BigDecimal(0.00).setScale(2);
     List <Product> purchaseList = new ArrayList<>();
-    SortedMap<String, List<Product>> inventory = new TreeMap<>();
+    SortedMap<String, List<Product>> inventory;
     LogWriter writer = new LogWriter();
 
     public VendingMachine(SortedMap<String, List<Product>> inventory) {
@@ -22,7 +22,7 @@ public class VendingMachine {
             List value = entry.getValue();
 
             if (value.size() == 1) {
-                System.out.println(key + "is out of stock.");
+                System.out.println(key + " is out of stock.");
             } else {
                 System.out.println(key + " | " + value.get(0) + " | Quantity: " + (value.size() - 1));
             }
@@ -32,13 +32,13 @@ public class VendingMachine {
     // Method to select product
     public void purchase(String guestSelection)  {
         if (!inventory.containsKey(guestSelection)) {
-            System.out.println("This product does not exist. Please select a product in the vending machine.");
+            System.out.println("Sorry, we don't have that product. Please select one in the vending machine.");
         }
         if (inventory.containsKey(guestSelection)) {
             if (inventory.get(guestSelection).size() == 1) {
-                System.out.println("Item is out of stock.");
+                System.out.println("Item is out of stock. Please select another item.");
             }
-            if (inventory.get(guestSelection).size() >= 1) {
+            else if (inventory.get(guestSelection).size() > 1) {
                 if (balance.compareTo(inventory.get(guestSelection).get(0).price) >= 0) {
                     balance = balance.subtract(inventory.get(guestSelection).get(0).price);
                     Product purchasedProduct = inventory.get(guestSelection).remove(0);
@@ -47,20 +47,21 @@ public class VendingMachine {
                     System.out.println(purchasedProduct.getSound());
 
                     purchaseList.add(purchasedProduct);
-                    Product cost = inventory.get(guestSelection).get(1);
+                    Product cost = inventory.get(guestSelection).get(0);
                     BigDecimal cost1 = cost.price;
                     Product name1 = inventory.get(guestSelection).get(0);
                     String product1 = name1.name + " " + guestSelection;
                      writer.writer(product1 + " ", cost1, balance);
                 }
                 else {
-                    System.out.println("Insufficient funds");
+                    System.out.println("Insufficient funds. Please add money.");
                 }
             }
         }
         System.out.println("Your balance is " + balance + ".");
     }
 
+    // Method to complete transaction
     public void completeTransaction() {
         String typeOfTransaction = "GIVE CHANGE: ";
 
@@ -70,11 +71,10 @@ public class VendingMachine {
         writer.writer(typeOfTransaction, balance, new BigDecimal(0.00).setScale(2));
         while (purchaseList.size() > 0) {
             Product purchases = purchaseList.remove(0);
-
         }
     }
 
-    //Method to feed money
+    // Method to feed money
     public void feedMoney(int addMoney) {
         String typeOfTransaction = "FEED MONEY: ";
         if (addMoney == 1) {
@@ -90,13 +90,10 @@ public class VendingMachine {
             writer.writer(typeOfTransaction, new BigDecimal(5.00).setScale(2), balance);
 
 
-        }else if (addMoney == 4) {
+        } else if (addMoney == 4) {
             balance = balance.add(new BigDecimal((10.00)));//Method to complete transaction
             writer.writer(typeOfTransaction, new BigDecimal(10.00).setScale(2), balance);
-
         }
         System.out.println("Your balance is " + balance + ".");
     }
-
-
 }

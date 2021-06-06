@@ -11,7 +11,7 @@ import org.junit.Test;
 public class InventoryReaderTests {
 
     @Test
-    public void testInventoryReader() {
+    public void testInventoryReader_shouldReadCorrectValues() {
         InventoryReader inventoryReader = new InventoryReader();
         SortedMap<String, List<Product>> testSortedMap = inventoryReader.fileImporter();
 

@@ -13,11 +13,11 @@ public class LogWriterTest {
 
     @Before
     public void setUpLogWriter() {
-        testLogWriter.writer("Test Transcation: ", new BigDecimal(1.50).setScale(2), new BigDecimal (3.00).setScale(2));
+        testLogWriter.writer("Test Transaction: ", new BigDecimal(1.50).setScale(2), new BigDecimal (3.00).setScale(2));
     }
 
     @Test
-    public void testThatLogWriterPrintsCorrectly() {
+    public void logWriterTest_shouldWriteToLog() {
         Assert.assertEquals(true, scanner.hasNextLine());
         scanner.nextLine();
         Assert.assertEquals(false, scanner.hasNextLine());

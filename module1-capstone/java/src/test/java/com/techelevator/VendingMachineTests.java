@@ -27,7 +27,7 @@ public class VendingMachineTests {
     }
 
     @Test
-    public void feedMoneyTest_invalidInput_balanceShouldRemainTheSame() {
+    public void feedMoneyTest_invalidInput_shouldRetainSameBalance() {
         vendingMachine.feedMoney(7);
         Assert.assertEquals(new BigDecimal(0.00).setScale(2), vendingMachine.balance);
     }
@@ -47,7 +47,7 @@ public class VendingMachineTests {
     }
 
   @Test
-    public void completeTranscationTest_shouldReturnBalanceOf0() {
+    public void completeTransactionTest_shouldReturnBalanceOf0() {
         vendingMachine.feedMoney(3);
         vendingMachine.purchase("A1");
         vendingMachine.completeTransaction();

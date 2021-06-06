@@ -4,6 +4,7 @@ import com.techelevator.view.Menu;
 import java.util.Scanner;
 import com.techelevator.InventoryReader;
 import com.techelevator.VendingMachine;
+import jdk.swing.interop.SwingInterOpUtils;
 
 public class VendingMachineCLI {
 
@@ -22,11 +23,6 @@ public class VendingMachineCLI {
 	private static final String[] MONEY_MENU_OPTIONS = {MONEY_MENU_OPTION_ONE, MONEY_MENU_OPTION_TWO, MONEY_MENU_OPTION_FIVE, MONEY_MENU_OPTION_TEN};
 	private static VendingMachine vm = null;
 
-	//public void exit() {
-		//System.exit(0);
-	//}
-
-
 	private Menu menu;
 
 	public VendingMachineCLI(Menu menu) {
@@ -38,10 +34,8 @@ public class VendingMachineCLI {
 			String choice = (String) menu.getChoiceFromOptions(MAIN_MENU_OPTIONS);
 
 			if (choice.equals(MAIN_MENU_OPTION_DISPLAY_ITEMS)) {
-				// display vending machine items
 				vm.displayInventory();
 			} else if (choice.equals(MAIN_MENU_OPTION_PURCHASE)) {
-				// do purchase
 				while (true) {
 					String submenuChoice = (String) menu.getChoiceFromOptions(SUB_MENU_OPTIONS);
 					if (submenuChoice.equals(SUB_MENU_OPTIONS_FEED_MONEY)) {
@@ -57,7 +51,7 @@ public class VendingMachineCLI {
 						}
 					} else if (submenuChoice.equals(SUB_MENU_OPTIONS_PURCHASE)) {
 						vm.displayInventory();
-						System.out.println("Please enter your selection");
+						System.out.println("\nPlease enter your selection:");
 						Scanner selection = new Scanner(System.in);
 						String guestSelection = selection.nextLine();
 						vm.purchase(guestSelection);
@@ -67,6 +61,7 @@ public class VendingMachineCLI {
 					}
 				}
 			} else if (choice.equals(MAIN_MENU_OPTION_EXIT)) {
+				System.out.println("Thanks for using our vending machine. Goodbye!");
 				System.exit(0);
 			}
 		}

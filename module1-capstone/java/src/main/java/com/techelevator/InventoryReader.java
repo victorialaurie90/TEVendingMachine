@@ -40,26 +40,20 @@ public class InventoryReader {
                         for (int i = 0; i <= 5; i++) {
                             Drink temp = new Drink(inventoryImportArray[1], new BigDecimal(inventoryImportArray[2]));
                             drinkArray.add(temp);
-
                         }
                         vendingMachineInventory.put(inventoryImportArray[0], drinkArray);
-
 
                     } else {
                         List<Product> gumArray = new ArrayList<>();
                         for (int i = 0; i <= 5; i++) {
                             Gum temp = new Gum(inventoryImportArray[1], new BigDecimal(inventoryImportArray[2]));
                             gumArray.add(temp);
-
                         }
                         vendingMachineInventory.put(inventoryImportArray[0], gumArray);
                     }
-
                 }
-
             }
             return vendingMachineInventory;
-
 
         } catch (FileNotFoundException e) {
             System.out.println("File does not exist");

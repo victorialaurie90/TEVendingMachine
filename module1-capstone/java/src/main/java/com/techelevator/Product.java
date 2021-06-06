@@ -11,7 +11,6 @@ public abstract class Product {
         this.price = price;
     }
 
-
     public abstract String getSound();
 
     @Override
@@ -20,19 +19,6 @@ public abstract class Product {
         return result;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public BigDecimal getPrice() {
-        return price;
-    }
-
-    public void setPrice(BigDecimal price) {
-        this.price = price;
-    }
+    public String getName() {return name;}
+    public BigDecimal getPrice() {return price;}
 }
